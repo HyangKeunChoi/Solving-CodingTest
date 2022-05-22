@@ -5,6 +5,11 @@ import java.util.Map.Entry;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
+/*
+ * 2019 KAKAO BLIND RECRUITMENT
+ * map의 value로 정렬하기
+ * double오름차순 정렬
+ */
 public class Solution2 {
     public static void main(String[] args) {
         Solution2 solution2 = new Solution2();

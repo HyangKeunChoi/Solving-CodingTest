@@ -1,5 +1,10 @@
 package programmers.withDayoung.week1;
 
+/*
+ * 월간 코드 챌린지 시즌1 > 3진법 뒤집기
+ * 문자열 reverse
+ * 진법 변환
+ */
 public class Solution3 {
     public static void main(String[] args) {
         Solution3 solution3 = new Solution3();
