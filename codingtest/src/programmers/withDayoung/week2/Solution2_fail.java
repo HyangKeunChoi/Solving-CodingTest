@@ -32,6 +32,10 @@ public class Solution2_fail {
             list2.add(s2);
         }
 
+        /*System.out.println(list1.stream()
+                .filter(p -> list2.contains(p))
+                .collect(Collectors.toList()) );*/
+
         // 실패 원인 : 중복된 요소까지 모두 제거함
         list1.removeAll(list2);
 

@@ -11,7 +11,8 @@ public class Solution2 {
     }
     public int solution(int[] absolutes, boolean[] signs) {
         int answer = 0;
-
+        
+        // 다영대리가 AtomicInteger로 푸는거 확인해보기
         for (int i = 0; i < absolutes.length; i++) {
             if (signs[i]) {
                 answer += absolutes[i];
