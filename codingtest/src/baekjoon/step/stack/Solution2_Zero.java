@@ -3,7 +3,7 @@ package baekjoon.step.stack;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Solution3_Zero {
+public class Solution2_Zero {
 
     public static void main(String[] args) {
 
