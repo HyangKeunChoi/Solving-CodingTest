@@ -21,7 +21,7 @@ public class Solution3_ReverseOrdr {
         String[] strArr = s.split("");
 
         strArr = Arrays.stream(strArr).sorted(Comparator.reverseOrder())
-                    .collect(Collectors.toList()).toArray(String[]::new);
+                .toArray(String[]::new);
 
         // string array to string
         String str = String.join(",", strArr);
