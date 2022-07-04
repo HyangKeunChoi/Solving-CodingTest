@@ -1,4 +1,4 @@
-package programmers.withDayoung.week6;
+package programmers.withDayoung.week7;
 
 public class Solution5 {
 

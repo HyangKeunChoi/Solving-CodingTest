@@ -1,4 +1,4 @@
-package programmers.withDayoung.week6;
+package programmers.withDayoung.week7;
 
 /*
  * 월간 코드 챌린지 시즌2 > 약수의 개수와 덧셈
