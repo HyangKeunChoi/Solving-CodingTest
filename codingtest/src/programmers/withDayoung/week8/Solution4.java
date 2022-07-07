@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
  * 세개의 수 비교
@@ -25,10 +26,12 @@ public class Solution4 {
         List<Integer> threeSuPo = createThreeSuPo(answerLength);
 
         // TO DO  - 매칭되는 카운트 수가 맞지 않음
-        int oneCount = (int) Arrays.stream(answers).filter(i -> i == oneSuPo.get(i-1)).count();
-        int twoCount = (int) Arrays.stream(answers).filter(i -> i == twoSuPo.get(i-1)).count();
-        int threeCount = (int) Arrays.stream(answers).filter(i -> i == threeSuPo.get(i-1)).count();
-
+        AtomicInteger index = new AtomicInteger();
+        AtomicInteger index2 = new AtomicInteger();
+        AtomicInteger index3 = new AtomicInteger();
+        int oneCount = (int) Arrays.stream(answers).filter(i -> i == oneSuPo.get(index.getAndIncrement())).count();
+        int twoCount = (int) Arrays.stream(answers).filter(i -> i == twoSuPo.get(index2.getAndIncrement())).count();
+        int threeCount = (int) Arrays.stream(answers).filter(i -> i == threeSuPo.get(index3.getAndIncrement())).count();
                 
         Integer[] answertemp = {oneCount, twoCount, threeCount};
         answertemp = Arrays.stream(answertemp).filter(i -> i != 0 ).toArray(Integer[]::new);
@@ -38,11 +41,9 @@ public class Solution4 {
             if(answertemp[j] != 0) {
                 if (answertemp[j] == oneCount) {
                     answer[j] = 1;
-                }
-                if (answertemp[j] == twoCount) {
+                }else if (answertemp[j] == twoCount) {
                     answer[j] = 2;
-                }
-                if (answertemp[j] == threeCount) {
+                }else if (answertemp[j] == threeCount) {
                     answer[j] = 3;
                 }
             }
