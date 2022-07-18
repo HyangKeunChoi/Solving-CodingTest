@@ -2,12 +2,13 @@ package programmers.withDayoung.week8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /*
  * 세개의 수 비교
+ *
+ * https://babodocoding.tistory.com/40
  */
 public class Solution4 {
 
@@ -32,23 +33,25 @@ public class Solution4 {
         int oneCount = (int) Arrays.stream(answers).filter(i -> i == oneSuPo.get(index.getAndIncrement())).count();
         int twoCount = (int) Arrays.stream(answers).filter(i -> i == twoSuPo.get(index2.getAndIncrement())).count();
         int threeCount = (int) Arrays.stream(answers).filter(i -> i == threeSuPo.get(index3.getAndIncrement())).count();
-                
-        Integer[] answertemp = {oneCount, twoCount, threeCount};
-        answertemp = Arrays.stream(answertemp).filter(i -> i != 0 ).toArray(Integer[]::new);
-        int[] answer = new int[answertemp.length];
-        Arrays.sort(answertemp, Collections.reverseOrder());
-        for(int j =0; j<answertemp.length; j++) {
-            if(answertemp[j] != 0) {
-                if (answertemp[j] == oneCount) {
-                    answer[j] = 1;
-                }else if (answertemp[j] == twoCount) {
-                    answer[j] = 2;
-                }else if (answertemp[j] == threeCount) {
-                    answer[j] = 3;
-                }
-            }
+
+        int max = Math.max(oneCount, Math.max(twoCount, threeCount));
+
+        List<Integer> list = new ArrayList<>();
+        if(max == oneCount) {
+            list.add(1);
         }
-        
+        if(max == twoCount) {
+            list.add(2);
+        }
+        if(max == threeCount) {
+            list.add(3);
+        }
+
+        int[] answer = new int[list.size()];;
+        for (int i=0; i<list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
         return answer;
     }
 
