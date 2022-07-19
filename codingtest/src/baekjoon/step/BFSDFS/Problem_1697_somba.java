@@ -11,21 +11,26 @@ import java.util.StringTokenizer;
 // https://velog.io/@leeinae/Algorithm-%EB%B0%B1%EC%A4%801697-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88
 public class Problem_1697_somba {
 
-    static int[] dx = {-1, 0, 1};
-    static int[] dy = {0, 2, 0};
+    static int[] dx = {-1, 2, 1};
+
     static int[] checked = new int[100001];
-    ;
-    static int j;
+
+    static int I;
+    static int J;
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int i = Integer.parseInt(st.nextToken());
-        j = Integer.parseInt(st.nextToken());
+        I = Integer.parseInt(st.nextToken());
+        J = Integer.parseInt(st.nextToken());
 
-        BFS(i);
+        if (I == J) {
+            System.out.println(0);
+        } else {
+            BFS(I);
+        }
     }
 
     private static void BFS(int i) {
@@ -40,12 +45,12 @@ public class Problem_1697_somba {
                 int next;
 
                 if (k == 1) {
-                    next = tempx * dy[k];
+                    next = tempx * dx[k];
                 } else {
                     next = tempx + dx[k];
                 }
 
-                if (next == j) {
+                if (next == J) {
                     System.out.println(checked[tempx]);
                     return;
                 } else if (next >= 0 && next <= 100000 && checked[next] == 0) {
