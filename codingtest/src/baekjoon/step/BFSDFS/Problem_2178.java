@@ -8,6 +8,7 @@ import java.util.Queue;
 
 // hard
 // https://www.youtube.com/watch?v=2QVfsI55AVo
+// 미로 탐색
 public class Problem_2178 {
 
     static int[][] matrix;

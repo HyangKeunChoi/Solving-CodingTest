@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+// 바이러스
 public class Problem_2606 {
     static int[][] matrix;
     static int[] check;

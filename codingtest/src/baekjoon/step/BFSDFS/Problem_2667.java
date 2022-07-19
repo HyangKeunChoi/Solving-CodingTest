@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+// 단지번호붙이기 성공
 public class Problem_2667 {
 
     static int matrix[][];

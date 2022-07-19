@@ -7,6 +7,7 @@ import java.util.Stack;
 
 // https://www.acmicpc.net/problem/1260
 // https://m.blog.naver.com/lm040466/221787478911
+// DFS와 BFS
 public class Problem_1260 {
 
     public static int[][] matrix;
