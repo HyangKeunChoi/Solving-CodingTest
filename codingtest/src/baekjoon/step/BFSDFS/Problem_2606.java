@@ -17,9 +17,9 @@ public class Problem_2606 {
         String vertex = bf.readLine();
         String line = bf.readLine();
 
-
         matrix = new int[Integer.parseInt(vertex) + 1][Integer.parseInt(vertex) + 1];
         check = new int[Integer.parseInt(vertex) + 1];
+
         for (int i = 0; i < Integer.parseInt(line); i++) {
             String[] splitInput = bf.readLine().split(" ");
             matrix[Integer.parseInt(splitInput[0])][Integer.parseInt(splitInput[1])] = 1;

@@ -12,17 +12,14 @@ public class Problem_2667 {
     static int w;
     static boolean checked[][];
     static int count;
-
     static int[] dx = {1, 0,-1, 0};
     static int[] dy = {0, 1, 0, -1};
-
     static List<Integer> list = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         w = Integer.parseInt(st.nextToken());
-
 
         matrix = new int[w + 1][w + 1];
         checked = new boolean[w + 1][w + 1];
@@ -34,7 +31,6 @@ public class Problem_2667 {
             }
         }
 
-        // BFS();
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < w; j++) {
                 count = 0;
@@ -82,6 +78,5 @@ public class Problem_2667 {
             }
         }
         list.add(count);
-
     }
 }

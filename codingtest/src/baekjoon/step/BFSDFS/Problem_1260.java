@@ -9,7 +9,6 @@ import java.util.Stack;
 // https://m.blog.naver.com/lm040466/221787478911
 // DFS와 BFS
 public class Problem_1260 {
-
     public static int[][] matrix;
     public static int[] checked;
     public static int[] checked2;

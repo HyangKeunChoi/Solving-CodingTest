@@ -10,17 +10,14 @@ import java.util.Queue;
 // https://www.youtube.com/watch?v=2QVfsI55AVo
 // 미로 탐색
 public class Problem_2178 {
-
     static int[][] matrix;
     private int n;
     private int m;
     static boolean[][] checked;
-
     static int dx[] = {-1, 1, 0, 0};
     static int dy[] = {0, 0, -1, 1};
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] splitLine = br.readLine().split(" ");
 
@@ -35,14 +32,12 @@ public class Problem_2178 {
 
         for (int i = 1; i <= Integer.parseInt(N); i++) {
             String read = br.readLine();
-
             String[] split = read.split("");
             for (int j = 1; j <= Integer.parseInt(M); j++) {
                 matrix[i][j] = Integer.parseInt(split[j - 1]);
             }
         }
-
-        problem_2178.bfs(1,1);
+        problem_2178.bfs(1, 1);
         System.out.println(matrix[Integer.parseInt(N)][Integer.parseInt(M)]);
     }
 
@@ -55,7 +50,6 @@ public class Problem_2178 {
     private void bfs(int i, int j) {
         Queue<Integer> queueX = new LinkedList<>();
         queueX.offer(i);
-
         Queue<Integer> queueY = new LinkedList<>();
         queueY.offer(j);
         checked[i][j] = true;

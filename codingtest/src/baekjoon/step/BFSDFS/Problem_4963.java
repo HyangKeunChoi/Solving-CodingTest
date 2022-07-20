@@ -17,12 +17,12 @@ public class Problem_4963 {
     static boolean checked[][];
     static int count;
 
-    static int[] dx = {1, 0,-1, 0, 1, 1, -1, -1};
-    static int[] dy = {0, 1, 0, -1,1, -1, 1, -1};
+    static int[] dx = {1, 0, -1, 0, 1, 1, -1, -1};
+    static int[] dy = {0, 1, 0, -1, 1, -1, 1, -1};
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
             count = 0;
@@ -30,7 +30,7 @@ public class Problem_4963 {
             w = Integer.parseInt(st.nextToken());
             h = Integer.parseInt(st.nextToken());
 
-            if(w == 0 && h ==0 ) {
+            if (w == 0 && h == 0) {
                 System.exit(0);
             }
 
@@ -44,7 +44,6 @@ public class Problem_4963 {
                 }
             }
 
-            // BFS();
             for (int i = 0; i < h; i++) {
                 for (int j = 0; j < w; j++) {
                     if (matrix[i + 1][j + 1] == 1 && !checked[i + 1][j + 1]) {
@@ -67,7 +66,7 @@ public class Problem_4963 {
         queue1.offer(i);
         queue2.offer(j);
 
-        while(!queue1.isEmpty()) {
+        while (!queue1.isEmpty()) {
 
             int polli = queue1.poll();
             int pollj = queue2.poll();
@@ -81,13 +80,9 @@ public class Problem_4963 {
                         checked[tempi][tempj] = true;
                         queue1.offer(tempi);
                         queue2.offer(tempj);
-
                     }
                 }
             }
         }
-
-
     }
-
 }
