@@ -16,12 +16,11 @@ public class Problem_7576 {
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
 
-    static Queue<Integer> queue1 = new LinkedList();
-    static Queue<Integer> queue2 = new LinkedList();
+    static Queue<Tomato> queue = new LinkedList();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
         w = Integer.parseInt(st.nextToken());
         h = Integer.parseInt(st.nextToken());
@@ -44,8 +43,7 @@ public class Problem_7576 {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 if (matrix[i + 1][j + 1] == 1) {
-                    queue1.offer(i + 1);
-                    queue2.offer(j + 1);
+                    queue.offer(new Tomato(i+1, j+1));
                     checked[i + 1][j + 1] = true;
                 }
             }
@@ -55,42 +53,54 @@ public class Problem_7576 {
 
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
-
                 day = Math.max(day, matrix[i+1][j+1]);
 
+                // 0이 하나라도 있으면
                 if (matrix[i + 1][j + 1] == 0) {
-                    System.out.println(-1);
+                    bw.write(String.valueOf(-1));
+                    bw.close();
                     return;
                 }
             }
         }
 
+        // 모두 1일이면
         if (day == 1) {
-            System.out.println(0);
+            bw.write(String.valueOf(0));
+            bw.close();
             return;
         }
 
-        System.out.println(day - 1);
+        bw.write(String.valueOf(day - 1));
+        bw.close();
     }
 
     private static void BFS() {
-        while (!queue1.isEmpty()) {
-            int polli = queue1.poll();
-            int pollj = queue2.poll();
+        while (!queue.isEmpty()) {
+            Tomato tomato = queue.poll();
 
             for (int k = 0; k < 4; k++) {
-                int tempi = polli + dx[k];
-                int tempj = pollj + dy[k];
+                int tempi = tomato.x + dx[k];
+                int tempj = tomato.y + dy[k];
 
                 if (tempi <= h && tempj <= w && tempi > 0 && tempj > 0) {
                     if (!checked[tempi][tempj] && matrix[tempi][tempj] == 0) {
                         checked[tempi][tempj] = true;
-                        matrix[tempi][tempj] = matrix[polli][pollj] + 1;
-                        queue1.offer(tempi);
-                        queue2.offer(tempj);
+                        matrix[tempi][tempj] = matrix[tomato.x][tomato.y] + 1;
+                        queue.offer(new Tomato(tempi, tempj));
                     }
                 }
             }
         }
+    }
+}
+
+class Tomato{
+    int x;
+    int y;
+
+    public Tomato(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }
