@@ -23,10 +23,9 @@ public class Problem8 {
     public int solution(String numbers) {
         int count = 0;
 
-        // 만들 수 있는 숫자
-        // 만든 숫자 중복제거
+        // 만들 수 있는 숫자 조합하기(재귀)
         recursive("", numbers);
-        System.out.println(numberSet);
+        System.out.println(numberSet); // 출력해 보기
 
         // 만든 숫자가 소수인지판단한다 - 에라토스테네스의 체 (특정 숫자의 루트값까지만 확인해서 소수인지 판별)
         Iterator<Integer> it = numberSet.iterator();
@@ -59,6 +58,7 @@ public class Problem8 {
 
     private void recursive(String comb, String others) {
         // 1. 현재 조합을 set에 추가한다.
+        // set을 통한 만든 숫자 중복제거
         if (!comb.equals("")) {
             numberSet.add(Integer.valueOf(comb));
         }
