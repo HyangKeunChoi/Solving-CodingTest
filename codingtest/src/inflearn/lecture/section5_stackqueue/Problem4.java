@@ -11,6 +11,8 @@ import java.util.Stack;
 
 // 숫자는 push
 // 연산자 만나면 pop
+
+// 문자 -48해야지 숫자
 public class Problem4 {
 
     public static void main(String[] args) {

@@ -15,7 +15,7 @@ import java.util.StringTokenizer;
 
 // 이렇게 풀었음
 // https://www.youtube.com/watch?v=QGsmvwCIAks
-public class Problem_1149 {
+public class Problem_1149_fail {
 
     static int[] dy;
     static int[] dx;
