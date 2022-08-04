@@ -1,4 +1,4 @@
-package codility.lesson.lesson1;
+package codility.lesson.lesson1_Iterations;
 
 import java.util.Stack;
 
