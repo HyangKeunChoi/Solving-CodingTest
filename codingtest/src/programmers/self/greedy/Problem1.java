@@ -1,5 +1,6 @@
 package programmers.self.greedy;
 
+// 그리디
 // 큰수 만들기 : k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하기
 
 // 설명 잘되어 있는곳 : https://born2bedeveloper.tistory.com/27

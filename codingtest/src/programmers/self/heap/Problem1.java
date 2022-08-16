@@ -1,10 +1,10 @@
-package programmers.self.greedy;
+package programmers.self.heap;
 
 import java.util.PriorityQueue;
 
 // 힙 ( 우선순위 큐)
 // 더 맵게
-public class Problem2 {
+public class Problem1 {
 
     public int solution(int[] scoville, int K) {
 
@@ -31,7 +31,7 @@ public class Problem2 {
     }
 
     public static void main(String[] args) {
-        Problem2 problem2 = new Problem2();
+        Problem1 problem2 = new Problem1();
 
         //int[] arr = {1, 2, 3, 9, 10, 12};
 
