@@ -11,11 +11,11 @@ public class Problem1 {
         StringBuilder answer = new StringBuilder();
         int idx = 0;
         char max;
-        for(int i = 0; i < number.length() - k; i++) {
+        for (int i = 0; i < number.length() - k; i++) {
             max = '0';
 
-            for(int j = idx; j <= k + i; j++) {
-                if(max < number.charAt(j)) {
+            for (int j = idx; j <= k + i; j++) {
+                if (max < number.charAt(j)) {
                     max = number.charAt(j);  // 최댓값 찾기
                     idx = j + 1;
                 }

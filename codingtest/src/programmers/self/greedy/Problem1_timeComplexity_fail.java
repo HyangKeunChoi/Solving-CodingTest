@@ -20,8 +20,8 @@ public class Problem1_timeComplexity_fail {
             intArr[i] = Integer.parseInt(String.valueOf(arr[i]));
         }
 
-        for(int r = 1; r <= intArr.length ; r++) {
-            if (r == intArr.length- k ) {
+        for (int r = 1; r <= intArr.length; r++) {
+            if (r == intArr.length - k) {
                 combination(intArr, visited, 0, intArr.length, r);
             }
         }
