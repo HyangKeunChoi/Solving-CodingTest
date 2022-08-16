@@ -52,13 +52,16 @@ public class Problem_2583 {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 if (!visit[i][j] && matrix[i][j] == 0) {
-                    count++; // 개수
+                    count++; // 분리된 영역의 개수
                     bfs(i, j);
                 }
             }
         }
 
+        // 영역의 갯수
         System.out.println(count);
+
+        // 각 영역의 넓이
         Collections.sort(area);
         for (int i = 0; i < area.size(); i++) {
             if(area.size() !=0 ) System.out.print(area.get(i) + " ");
